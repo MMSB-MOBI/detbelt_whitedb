@@ -1,0 +1,5 @@
+// Allow to obtain the good file format to import inside mongoDB or tingoDB
+
+sed -e '$d; 1d; 2d' data/all.json >data/to_import.json
+sed '1 i\
+['  data/to_import.json > data/res.json
