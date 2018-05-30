@@ -152,7 +152,7 @@ server.get('/results',function (req,res){
 server.get('/results/:word',function(req,res){
 	//if (dbState === "mongodb"){
 	DbApi.searchOnDB(db,req.params.word).then(function(items) {
-  		mongo.FindMatchFields(items,req.params.word)
+  		DbApi.FindMatchFields(items,req.params.word)
     	res.send(items); // old: res.send({"key":req.params.word,"hits":items});
 	}, function(err) {
   		console.error('The promise was rejected', err, err.stack);
