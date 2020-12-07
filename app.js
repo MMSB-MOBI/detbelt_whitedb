@@ -151,6 +151,7 @@ server.get('/results',function (req,res){
 
 server.get('/results/:word',function(req,res){
 	//if (dbState === "mongodb"){
+	console.log("Hello")
 	DbApi.searchOnDB(db,req.params.word).then(function(items) {
   		DbApi.FindMatchFields(items,req.params.word)
     	res.send(items); // old: res.send({"key":req.params.word,"hits":items});
@@ -169,6 +170,6 @@ server.get('/results/:word',function(req,res){
 })
 
 
-server.listen(1234, function () {
-  console.log('mongodet server listening on port 1234!')
+server.listen(1134, function () {
+  console.log('Server listening on port 1134!')
 });
