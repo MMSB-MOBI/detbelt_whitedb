@@ -1,5 +1,4 @@
 var Engine = require('tingodb')({});
-var db = new Engine.Db('./data/db', {});
 var express = require('express');
 var cors = require('cors');
 var server = express();
@@ -9,6 +8,9 @@ server.use('/static', express.static('./static'));
 server.use('/pdb', express.static('./static/pdb/tmprot'));
 var mongo = require('./mongo');
 var tingo = require('./tingo');
+const cst = require('./constants')
+
+const db = new Engine.Db(cst.DB_DIR, {});
 
 let testDb = function(){
   if(process.argv[2]==="--mongo"){
