@@ -1,6 +1,6 @@
-const DB_DIR = "/data/www_dev/corona/lib/whiteDBGL/data/db"
-const DB_JSON_NAME = "tingoWhite.json"
-const PDB_DIR = "/data/www_dev/corona/lib/whiteDBGL/data/pdb/tmprot/tingoWhite.json"
+const DB_DIR = "/data/databases/mobi/detbelt/proteins/tingo"
+const DB_JSON_NAME = "tingoWhite_legacy.json"
+const PDB_DIR = "/data/databases/mobi/detbelt/proteins/pdb_legacy"
 
 module.exports = {
     DB_DIR : DB_DIR,

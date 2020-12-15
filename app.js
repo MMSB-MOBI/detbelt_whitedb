@@ -9,6 +9,8 @@ server.use('/pdb', express.static('./static/pdb/tmprot'));
 var mongo = require('./mongo');
 var tingo = require('./tingo');
 const cst = require('./constants')
+const fs = require('fs'); 
+const { url } = require('inspector');
 
 const db = new Engine.Db(cst.DB_DIR, {});
 
@@ -169,6 +171,18 @@ server.get('/results/:word',function(req,res){
   // 			console.error('The promise was rejected', err, err.stack);
 		// });	
 	//}
+})
+
+server.get('/pdb/:id', function(req, res){
+	console.log("Get pdb with whiteDB api")
+	const pdb_file = `${req.params.id.toLowerCase()}.pdb`
+	const path = cst.PDB_DIR + "/" + pdb_file
+	console.log(`pdb path : ${path}`)
+	res.setHeader('content-type', 'application/json')
+	fs.readFile(path, (err, data) => {
+		if (err) res.send({"error": err}); 
+		else res.send({"url":path, "fileContent": data.toString()}); 
+	})
 })
 
 
