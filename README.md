@@ -11,6 +11,8 @@ npm i
 ```
 
 ## Construct database
+
+### Download and format
 ````
 python construction/construction.py --out-dir <db_directory>
 ````
@@ -20,7 +22,11 @@ It will create under <db_directory> :
 * whiteDB_\<timestamp>.json : json file with pdbs that are inside White and OPM
 * opmPDB_<timestamp> directory : directory that contains pdb files that are inside White and OPM
 
-Then init tingo database : 
+### Filter
+Filter ectopic proteins with notebook : notebook/check_pdbs.ipynb  
+It creates a new json file that you can use to create tingo database. 
+
+### Create tingo db : 
 ```
 node app.js -init <db_directory/whiteDB_<timestamp>.json
 ```
@@ -32,4 +38,4 @@ node app.js
 ```
 
 ## Configuration
-change variables inside constants.js 
+Change variables inside constants.js 
