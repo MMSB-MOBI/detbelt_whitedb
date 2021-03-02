@@ -43,6 +43,7 @@ var searchOnDB = function(db, word){
 	return new Promise((resolve,reject)=>{
 		let collection = db.collection(cst.DB_JSON_NAME);
 		collection.find({ $or:[{name: {'$regex':word}},{pdbCode : {'$regex':word}},{resolution : {'$regex':word}},{species : {'$regex':word}},{description: {'$regex':word}},{group : {'$regex':word}},{subgroup : {'$regex':word}},{relatedPdbEntries:{'$elemMatch':{'$regex':word}}}]}).toArray(function(error,content){
+			if(error) reject(error); 
 			resolve(content)
 		})
 	})
