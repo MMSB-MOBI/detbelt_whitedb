@@ -1,6 +1,6 @@
-const DB_DIR = "/data/databases/mobi/detbelt/proteins/tingo"
-const DB_JSON_NAME = "tingoWhite_legacy.json"
-const PDB_DIR = "/data/databases/mobi/detbelt/proteins/pdb_legacy"
+const DB_DIR = "/data/databases/mobi/detbelt/proteins"
+const DB_JSON_NAME = "tingoWhite_20210114-102025.json"
+const PDB_DIR = "/data/databases/mobi/detbelt/proteins/opmPDB_20210114-102025/validated/"
 
 module.exports = {
     DB_DIR : DB_DIR,
